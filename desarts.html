@@ -1,0 +1,993 @@
+<!--
+
+// [Theme]
+   
+   Des Arts
+ 
+by egg.design //
+ 
+    + basic html and css knowledge is required to customize this theme
+    + this code belongs to eggdesigns.co. While it is free to use, it is not      free to sell or otherwise redistribute
+    + feel free to edit and custom the theme to your liking, 
+    but don't use as a base, remove the credit, or claim as your own
+    
+Credits
+    + icon fonts from suiomi and font awesome
+    + infinite scroll script
+    
+Version 1.0
+
+-->
+<html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+      
+        <link href="https://fonts.googleapis.com/css?family={text:Google Font}" rel="stylesheet">
+        <link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+        <meta name="color:accent" content="#eab7be" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+        <meta name="image:header" content="https://images.unsplash.com/photo-1501534664411-d04203736d05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80" />
+        
+        <meta name="color:background" content="#f8f8f8" />
+        <meta name="color:posts" content="#fff" />
+        <meta name="color:links" content="pink" />
+        <meta name="color:footer" content="#f8f8f8" />
+        <meta name="color:hovercaption" content="#000" />
+
+        <meta name="text:social media 1" content="" />
+        <meta name="text:social media 1 icon" content="tumblr" />
+        <meta name="text:social media 2" content="" />
+        <meta name="text:social media 2 icon" content="pinterest" />
+        <meta name="text:social media 3" content="" />
+        <meta name="text:social media 3 icon" content="twitter" />
+        <meta name="text:social media 4" content="" />
+        <meta name="text:social media 4 icon" content="discord" />
+        
+        <meta name="text:Google Font" content="Muli"/>
+        
+        <script>
+       $(document).ready(function () {
+$('main').infiniteScroll({
+  // options
+  path: '.nextpage',
+  append: 'article',
+  history: false,
+  button: '.load-more',
+    scrollThreshold: false,
+    status: '.page-load-status',
+});
+
+});
+</script>
+</head>
+    
+    <style type="text/css">
+    
+    /**
+ 
+CSS editing directory
+ 
+Labeled sections for easier navigating
+ 
+01. Controls    - tumblr controls, selection, and scrollbar
+02. General     - body, links, headings, etc
+03. Header      - header, description, icon
+04. Posts       - container, posts, post styles
+05. Responsive  - Mobile design
+ 
+**/
+ 
+/* ------------
+ 
+ 01. Controls
+ 
+ ------------ */
+ ::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: {color:accent};
+	border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+	background: #444;
+	border: 4px solid {color:background};
+}
+
+/* ------------
+ 
+ 02. General
+ 
+ ------------ */
+
+* {
+	box-sizing: border-box;
+}
+
+*,
+ :hover {
+	transition: .6s;
+}
+
+
+
+body {
+	margin: 0;
+	background: #f8f8f8 url() no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	word-wrap: break-word;
+	font-size: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	line-height: 150%;
+	font-family: {text:Google Font};
+}
+
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+/* ------------
+ 
+ 03. Header
+ 
+ ------------ */
+
+header {
+	width: 100%;
+	background: url({image:header});
+	min-height: 50vh;
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	position: relative;
+	color: white;
+	box-shadow: inset 0px -4px 20px rgba(0, 0, 0, .04);
+	justify-content: center;
+	background-size: cover;
+}
+
+header:before {
+	content: '';
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	background: rgba(0, 0, 0, .24);
+}
+
+header a {
+	color: white;
+}
+
+.header {
+	width: 80%;
+	max-width: 1000px;
+	margin: auto;
+	z-index: 999;
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.links {
+	width: 100%;
+	padding: 10px 0;
+}
+
+.links a {
+	margin: 0 10px 0 0;
+}
+
+.reblogs a {
+	color: {color:links};
+}
+
+header img {
+	padding: 0px;
+	width: 86px;
+	border-radius: 2%;
+}
+
+header .description {
+	width: 100%;
+}
+
+header h1 {
+	width: auto;
+	font-size: 1.24em;
+}
+
+
+/* ------------
+ 
+ 04. Posts
+ 
+ ------------ */
+
+main {
+	width: 100%;
+	{block:indexpage}
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: repeat(auto-fit,
+	minmax(23vw, 1fr));
+	grid-auto-rows: 20vw;
+	grid-auto-flow: row dense;
+	{/block:indexpage}
+}
+
+article {
+	position: relative;
+	background: {color:posts};
+	overflow:hidden;
+	display:flex;
+	align-items:center;
+	flex-wrap:wrap;
+	justify-content:center;
+	{block:permalinkpage}
+	margin:100px auto;
+	max-width:700px;
+	{/block:permalinkpage}
+}
+
+ol.notes {
+	max-width: 700px;
+	margin: 20px auto;
+	background:{color:posts};
+}
+
+ol.notes li {
+	padding: 10px;
+}
+
+ol.notes li img {
+	display: none;
+}
+
+article img {
+	max-width: 100%;
+}
+
+.tall {
+	grid-row-end: span 2;
+}
+
+.wide {
+	grid-column-end: span 2;
+}
+
+.big {
+	grid-row-end: span 2;
+	grid-column-end: span 2;
+}
+
+.huge {
+	grid-column-end: span 4;
+	grid-row-end: span 4;
+}
+
+.longwide {
+	grid-column-end: span 3;
+}
+
+.longtall {
+	grid-row-end: span 3;
+}
+
+.full {
+	grid-column-end: span 4;
+}
+
+.photo_post .photop {
+	{block:indexpage}
+	height:auto;
+	width:auto;
+	min-width:100%;
+	min-height:100%;
+	top:0;
+	display:none;
+	left:0%;
+	position:absolute;
+	{/block:indexpage}
+}
+
+.photo_post .photop:first-of-type {
+	display: block!important;
+}
+
+.video_post iframe {
+	position: absolute;
+	top: 0;
+	min-width: 100%;
+	min-height: 100%;
+	left: 0;
+}
+
+.hovercaption {
+	position: absolute;
+	top: 0;
+	opacity: 0;
+	left: 0;
+	width: 100%;
+	align-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	background:rgba( {RGBcolor:hovercaption},.36);
+	height:100%;
+	color:white;
+	font-size:1.12em;
+}
+
+.audio_post .hovercaption {
+	opacity: 1;
+}
+
+.reblog-list,
+figcaption {
+	width: 80%;
+	margin: auto;
+}
+
+.hovercaption a {
+	color: white;
+}
+
+.reblog-list div {
+	width: 100%;
+}
+
+.user {
+	margin-left: 10px;
+}
+
+article:hover .hovercaption {
+	opacity: 1;
+}
+
+.tags {
+	width: 80%;
+	margin: 20px auto;
+}
+
+.tags a {
+	padding: 4px;
+	text-transform: uppercase;
+}
+
+.tags a[href$='/tagged/tall'],
+.tags a[href$='/tagged/wide'] {
+	display: none;
+}
+
+.text_post .hovercaption,
+.quote_post .hovercaption,
+.chat_post .hovercaption,
+.link_post .hovercaption {
+	display: none;
+}
+
+.text_post {
+	position: relative;
+}
+
+.quote_post blockquote {
+	margin: 0px;
+	padding: 10px;
+	border-left:2px solid {color:accent};
+	background:#f8f8f8;
+	font-size:1.2em;
+	width:100%;
+}
+
+.indextext {
+	height: 80%!important;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 0 5%;
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+}
+
+.indextext .reblog-list {
+	width: 100%;
+}
+
+.indextext .tags {
+	width: 100%;
+	margin: 20px auto 10px auto;
+}
+
+.link_post .indextext:before {
+	display: none;
+}
+
+.link_post .indextext a {
+	font-size: 1.2em;
+	padding: 10px;
+	background: {color:accent};
+}
+
+.indextext:before {
+	width: 100%;
+	height: 100%;
+	content: '';
+	left: 0;
+	top: 0;
+	position: absolute;
+	background: linear-gradient(to top, white, transparent);
+}
+
+.readmore {
+	height: 20%;
+	border-top: 1px solid #f8f8f8;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 5%;
+	margin: auto;
+}
+
+.readmore a {
+	background: #f8f8f8;
+	padding: 4px 8px;
+}
+
+.readmore span {
+	margin-left: 10px;
+	transform: translateY(2px);
+}
+
+.caption,
+.reblogs {
+	padding: 40px;
+}
+
+ul.chat li {
+	list-style: none;
+	padding: 10px;
+}
+
+ul.chat li:nth-of-type(even) {
+	background: #f8f8f8;
+}
+
+ul.chat {
+	padding: 0px;
+	margin: 0px;
+}
+
+section {
+	margin: 50px auto;
+}
+
+.load-more {
+	padding: 14px;
+	font-size: 1.12em;
+	background: #eee;
+	border: none;
+}
+
+#pagination {
+	display: none;
+}
+
+.page-load-status {
+	display: none;
+	/* hidden by default */
+}
+
+.fullpost {
+	background: rgba(0, 0, 0, .08);
+}
+
+.fullpost:hover {
+	background: rgba(0, 0, 0, .2);
+}
+
+footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: 20px 0;
+	flex-wrap: wrap;
+	align-content: center;
+	background: {color:footer};
+}
+
+footer p {
+	width: 100%;
+}
+
+footer a {
+	margin: 10px;
+	color: {color:links};
+}
+
+/* ------------
+ 
+ 05. Responsive
+ 
+ ------------ */
+
+@media only screen and (max-width: 1200px) {
+	main {
+		width: 100%;
+		{block:indexpage}
+		display: grid;
+		grid-gap: 0;
+		grid-template-columns: repeat(auto-fit,
+		minmax(32vw, 1fr));
+		grid-auto-rows: 33vw;
+		grid-auto-flow: row dense;
+		{/block:indexpage}
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	main {
+		width: 100%;
+		{block:indexpage}
+		display: grid;
+		grid-gap: 0;
+		grid-template-columns: repeat(auto-fit,
+		minmax(49vw, 1fr));
+		grid-auto-rows: 48vw;
+		grid-auto-flow: row dense;
+		{/block:indexpage}
+	}
+}
+   </style>
+    <body>
+    <header>
+    <div class="header">
+    <img src="{PortraitURL-128}">
+       
+        <div class="description">
+         <h1 style="">{Title}</h1>
+            {Description}
+              <div class="links">
+            <a href="/">Home</a>
+            {block:askenabled}
+            <a href="/ask">Ask</a>
+            {/block:askenabled}
+            {block:submissionsenabled}
+            <a href="/submit">Submit</a>
+            {/block:submissionsenabled}
+            <a href="/archive">Archive</a>
+        </div>
+        </div>
+        </div>
+      
+    </header>
+    <main>
+      {block:Posts}
+
+      <article class="{TagsAsClasses} {Posttype}_post">
+
+<!-- text post -->
+{block:Text}
+{block:indexpage}
+<div class="indextext">
+{block:Hastags}
+<div class="tags">
+    {block:Tags}
+    <a href="{TagURL}">{Tag}</a>
+    {/block:Tags}
+</div>
+{/block:hastags}
+{block:Title}
+<h1>{Title}</h1>
+
+{/block:Title}
+
+{block:NotReblog}
+    <figcaption>
+        {Body}
+    </figcaption>
+{/block:NotReblog}
+ 
+{block:RebloggedFrom}
+<div class="reblog-list">
+    {block:Reblogs}
+        <div class="{block:isOriginalEntry}original-reblog{/block:isOriginalEntry}">
+         
+ 
+            <div class="reblog-content">
+                {Body}
+            </div>
+        </div>
+    {/block:Reblogs}
+</div>
+{/block:RebloggedFrom}
+</div>
+<div class="readmore">
+    <a href="{permalink}">Read More <span class="th th-right-arrow"></span></a>
+</div>
+{/block:indexpage}
+
+
+{block:permalinkpage}
+<div class="caption">
+{block:Title}<h1>{Title}</h1>{/block:Title}
+{block:NotReblog}
+    <figcaption>
+        {Body}
+    </figcaption>
+{/block:NotReblog}
+ 
+{block:RebloggedFrom}
+<div class="reblog-list">
+    {block:Reblogs}
+        <div class="{block:isOriginalEntry}original-reblog{/block:isOriginalEntry}">
+            <div class="reblog-header">
+ 
+                {block:IsActive}
+                <a class="{block:isNotOriginalEntry}sub-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank">
+                    <img src="{PortraitURL-64}" style="width:24px; float:left">
+                </a>
+                {/block:IsActive}
+ 
+                {block:IsDeactivated}
+                <span class="inactive {block:isNotOriginalEntry} sub-reblog{/block:isNotOriginalEntry}">
+                    <img src="{PortraitURL-64}" style="width:24px; float:left">
+                </span>
+                {/block:IsDeactivated}
+ 
+                {block:IsActive}
+                   <a target="_blank" href="{Permalink}" class="user">{Username}</a>
+                {/block:IsActive}
+ 
+                {block:IsDeactivated}
+                    <span class="inactive deactivated">{Username}</span>
+                {/block:IsDeactivated}
+ 
+            </div>
+            <div class="reblog-content">
+                {Body}
+            </div>
+        </div>
+    {/block:Reblogs}
+</div>
+{/block:RebloggedFrom}
+</div>
+{/block:permalinkpage}
+
+{/block:Text} 
+
+<!-- photo post -->
+          {block:Photo}
+          <img src="{PhotoURL-HighRes}" class="photop">
+          {/block:Photo}
+          {block:Photoset}
+          {block:Photos}
+          <img src="{PhotoURL-HighRes}" class="photop">
+          {/block:Photos}
+          {/block:Photoset}
+<!-- video post -->          
+          {block:Video}
+      {VideoEmbed-700}
+{/block:Video}
+
+<!-- link post -->
+{block:Link}
+
+{block:indexpage}
+<div class="indextext">
+ <a href="{URL}" class="link" {Target}>{Name}</a>
+ </div>
+ <div class="readmore">
+    <a href="{permalink}">Read More <span class="th th-right-arrow"></span></a>
+</div>
+ {/block:indexpage}
+ 
+ {block:permalinkpage}
+  <a href="{URL}" class="link" {Target}>{Name}</a>
+ <div class="caption">
+     {Description}
+ </div>
+ {/block:permalinkpage}
+
+{/block:Link}
+
+<!-- audio post -->
+
+{block:Audio}
+
+{block:AlbumArt}
+<div class="indextext" style="width:100%; height:100%; background:url({AlbumArturl}">
+    
+</div>
+{/block:AlbumArt}
+{block:permalinkpage}
+
+{Audioembed}
+{/block:permalinkpage}
+
+{/block:audio}
+
+<!-- quote post -->
+
+{block:Quote}
+{block:indexpage}
+<div class="indextext">
+{block:Hastags}
+<div class="tags">
+    {block:Tags}
+    <a href="{TagURL}">{Tag}</a>
+    {/block:Tags}
+</div>
+{/block:hastags}
+<blockquote>"{Quote}"</blockquote>
+
+<p>-{Source}
+</div>
+<div class="readmore">
+    <a href="{permalink}">Read More <span class="th th-right-arrow"></span></a>
+</div>
+{/block:indexpage}
+
+{block:Permalinkpage}
+<blockquote>"{Quote}"</blockquote>
+
+<p>-{Source}
+</div>
+{/block:permalinkpage}
+
+{/block:Quote}
+
+
+
+<!-- answer -->
+
+{block:Answer}
+
+
+<div class="indextext">
+{block:Hastags}
+<div class="tags">
+    {block:Tags}
+    <a href="{TagURL}">{Tag}</a>
+    {/block:Tags}
+</div>
+{/block:hastags}
+<blockquote>{Question}</blockquote>
+
+{block:indexpage}
+<div class="readmore">
+    <a href="{permalink}">Read More <span class="th th-right-arrow"></span></a>
+</div>
+{/block:indexpage}
+
+{block:permalinkpage}
+<div class="reblogs">
+    {Answer}
+</div>
+{/block:permalinkpage}
+    
+</div>
+
+{/block:answer}
+<!-- chat -->
+
+{block:Chat}
+{block:indexpage}
+<div class="indextext">
+{block:Hastags}
+<div class="tags">
+    {block:Tags}
+    <a href="{TagURL}">{Tag}</a>
+    {/block:Tags}
+</div>
+{/block:hastags}
+{block:Title}
+<h1>{Title}</h1>
+
+{/block:Title}
+   <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}{Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+</div>
+<div class="readmore">
+    <a href="{permalink}">Read More <span class="th th-right-arrow"></span></a>
+</div>
+{/block:indexpage}
+
+{block:Permalinkpage}
+{block:Title}
+<h1>{Title}</h1>
+
+{/block:Title}
+ <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}{Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+</div>
+{/block:permalinkpage}
+{/block:Chat}
+
+<!-- hover captions -->
+{block:indexpage}
+<div class="hovercaption">
+{block:Hastags}
+<div class="tags">
+    {block:Tags}
+    <a href="{TagURL}">{Tag}</a>
+    {/block:Tags}
+</div>
+{/block:hastags}
+{block:caption}
+
+{block:NotReblog}
+    <figcaption>
+        {Caption}
+    </figcaption>
+{/block:NotReblog}
+ 
+{block:RebloggedFrom}
+<div class="reblog-list">
+    {block:Reblogs}
+        <div class="{block:isOriginalEntry}original-reblog{/block:isOriginalEntry}">
+            <div class="reblog-header">
+ 
+                {block:IsActive}
+                <a class="{block:isNotOriginalEntry}sub-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank">
+                    <img src="{PortraitURL-64}" style="width:24px; float:left">
+                </a>
+                {/block:IsActive}
+ 
+                {block:IsDeactivated}
+                <span class="inactive {block:isNotOriginalEntry} sub-reblog{/block:isNotOriginalEntry}">
+                    <img src="{PortraitURL-64}" style="width:24px; float:left">
+                </span>
+                {/block:IsDeactivated}
+ 
+                {block:IsActive}
+                   <a target="_blank" href="{Permalink}" class="user">{Username}</a>
+                {/block:IsActive}
+ 
+                {block:IsDeactivated}
+                    <span class="inactive deactivated">{Username}</span>
+                {/block:IsDeactivated}
+ 
+            </div>
+            <div class="reblog-content">
+                {Body}
+            </div>
+        </div>
+    {/block:Reblogs}
+</div>
+{/block:RebloggedFrom}
+
+{/block:caption}
+<p style="width:80%; text-align:left;">
+<a href="{permalink}"><span style="padding:10px;" class="fullpost">View full {block:audio} {PostType} {/block:audio} post</span></a>
+</p>
+</div>
+{/block:indexpage}
+
+{block:permalinkpage}
+{block:caption}
+
+{block:NotReblog}
+    <figcaption>
+        {Caption}
+    </figcaption>
+{/block:NotReblog}
+ 
+{block:RebloggedFrom}
+<div class="reblog-list">
+    {block:Reblogs}
+        <div class="reblogs {block:isOriginalEntry}original-reblog{/block:isOriginalEntry}">
+            <div class="reblog-header">
+ 
+                {block:IsActive}
+                <a class="{block:isNotOriginalEntry}sub-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank">
+                    <img src="{PortraitURL-64}" style="width:24px; float:left">
+                </a>
+                {/block:IsActive}
+ 
+                {block:IsDeactivated}
+                <span class="inactive {block:isNotOriginalEntry} sub-reblog{/block:isNotOriginalEntry}">
+                    <img src="{PortraitURL-64}" style="width:24px; float:left">
+                </span>
+                {/block:IsDeactivated}
+ 
+                {block:IsActive}
+                   <a target="_blank" href="{Permalink}" class="user">{Username}</a>
+                {/block:IsActive}
+ 
+                {block:IsDeactivated}
+                    <span class="inactive deactivated">{Username}</span>
+                {/block:IsDeactivated}
+ 
+            </div>
+            <div class="reblog-content">
+                {Body}
+            </div>
+        </div>
+    {/block:Reblogs}
+</div>
+{/block:RebloggedFrom}
+{/block:caption}
+{block:permalinkpage}
+
+      </article>
+     {PostNotes}
+   
+      {/block:Posts}
+       
+    </main>
+    <section>
+    <div class="page-load-status">
+  <p class="infinite-scroll-request">Loading...</p>
+  <p class="infinite-scroll-last">No more posts to load</p>
+  <p class="infinite-scroll-error">No more pages to load</p>
+</div>
+    {block:Pagination}
+     <button class="load-more">View more</button>
+       {/block:Pagination}
+     </section>
+     {block:Pagination}
+     <div id="pagination">{block:PreviousPage}
+                <a href="{PreviousPage}">Previous</a>
+            {/block:PreviousPage}{block:JumpPagination length="5"}{block:CurrentPage}
+                    <span class="current_page">{PageNumber}</span>
+                {/block:CurrentPage}{block:JumpPage}
+                    <a class="jump_page" href="{URL}">{PageNumber}</a>
+                {/block:JumpPage}{/block:JumpPagination}{block:NextPage}
+                <a class="nextpage" href="{NextPage}">Next</a>
+            {/block:NextPage}
+            </div>{/block:Pagination}
+<footer>
+   <p> {CopyrightYears} {Name}</p>
+   <p>
+   <a href="{text:social media 1}"><span class="fab fa-{text:social media 1 icon}"></span></a>
+    <a href="{text:social media 2}"><span class="fab fa-{text:social media 2 icon}"></span></a>
+     <a href="{text:social media 3}"><span class="fab fa-{text:social media 3 icon}"></span></a>
+     <a href="{text:social media 4}"><span class="fab fa-{text:social media 4 icon}"></span></a>
+     </p>
+     <p> Des Arts by <a href="https://egg.design">egg.design</a>
+</footer>
+    </body>
+</html>
