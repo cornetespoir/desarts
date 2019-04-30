@@ -15,7 +15,7 @@ Credits
     + icon fonts from suiomi and font awesome
     + infinite scroll script
     
-Version 1.0
+Version 1.01
 
 -->
 <html>
@@ -584,6 +584,12 @@ footer a {
             <a href="/submit">Submit</a>
             {/block:submissionsenabled}
             <a href="/archive">Archive</a>
+            <p>
+            {block:HasPages}
+            {block:Pages}
+            <a href="{URL}">{Label}</a>
+            {/block:Pages}
+            {/block:Haspages}
         </div>
         </div>
         </div>
